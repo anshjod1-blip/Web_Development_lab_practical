@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h2 align="center">Student Expense Tracker</h2>
+        <b>Expense Name:</b> <input type="text" id="name" placeholder="e.g., Lunch">
+        <b>Amount (Rs.):</b> <input type="number" id="amt" placeholder="e.g., 100">
+        <b>Category:</b> <input list="cats" id="cat" placeholder="Choose category">
+        <datalist id="cats">
+            <option value="Food"><option value="Travel"><option value="Shopping"><option value="Education"><option value="Other">
+        </datalist>
+        <button onclick="add()">Add Expense</button>
+        <p id="err" style="color:red; margin:0;"></p>
+
+        <div class="bar">
+            <div><b>Filter:</b> <input list="fcats" id="fcat" value="All" oninput="show()" style="width:140px; margin:0;"></div>
+            <datalist id="fcats">
+                <option value="All"><option value="Food"><option value="Travel"><option value="Shopping"><option value="Education"><option value="Other">
+            </datalist>
+            <b>Total: Rs. <span id="tot">0</span></b>
+        </div>
+
+        <table>
+            <thead><tr><th>Name</th><th>Category</th><th>Amount (Rs.)</th><th>Action</th></tr></thead>
+            <tbody id="list"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
